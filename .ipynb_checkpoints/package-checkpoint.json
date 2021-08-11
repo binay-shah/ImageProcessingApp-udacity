@@ -1,0 +1,16 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "description": "Image processing app",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint 'index.js'",
+    "prettier": "prettier --config .prettierrc '*.js' --write",
+      "build": "npx tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^1.19.1"
+  }
+}
