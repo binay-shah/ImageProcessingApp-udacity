@@ -14,9 +14,11 @@
       "prefer-const": "error"
     },
     "parserOptions": {
-      "ecmaVersion": 2017
+      "ecmaVersion": 2017,
+      "sourceType": "module"
     },
     "env": {
       "node": true,
       "es6": true
     }
+}
