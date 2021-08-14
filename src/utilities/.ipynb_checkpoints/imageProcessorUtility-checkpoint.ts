@@ -1,6 +1,15 @@
 import sharp from 'sharp';
 import { promises as fsPromises } from 'fs';
 
+const checkImageExists = async (filepath: string): Promise<boolean> => {
+  try {
+    await fsPromises.access(filepath);
+    return true;
+  } catch {
+    return false;
+  }
+};
+
 const resizeImage = async (
   filename: string,
   width: string,
@@ -14,18 +23,9 @@ const resizeImage = async (
     await sharp(`images/full/${filename}.jpg`)
       .resize(parseInt(width), parseInt(height))
       .toFormat('jpeg')
-      .toFile(`images/thumb/${filename}.jpg`);
+      .toFile(`images/thumb/${filename}_${width}_${height}.jpg`);
   } catch (error) {
     throw Error(error);
-  }
-};
-
-const checkImageExists = async (filepath: string): Promise<boolean> => {
-  try {
-    await fsPromises.access(filepath);
-    return true;
-  } catch {
-    return false;
   }
 };
 
