@@ -6,7 +6,8 @@ import {
 } from '../../utilities/imageProcessorUtility';
 const imageProcessor = express.Router();
 
-imageProcessor.get('/', async (req: express.Request, res: express.Response) => {
+imageProcessor.get('/', async (req : express.Request, res : express.Response) => {
+    
   const filename = req.query.filename as string;
   const width = req.query.width as string;
   const height = req.query.height as string;

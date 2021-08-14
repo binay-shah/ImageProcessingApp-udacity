@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon build/index.js",
-    "lint": "eslint 'src/index.ts'",
+    "lint": "eslint 'src/**/*.ts'",
     "prettier": "prettier --config .prettierrc 'src/**/*.ts' --write",
     "build": "npx tsc",
     "jasmine": "jasmine",
